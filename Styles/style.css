@@ -1,0 +1,95 @@
+:root {
+    --color-primary: 3, 102, 174; /* Default: Deep Blue */
+    --color-accent: 251, 191, 36; /* Default: Amber */
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    /* background-color: #0d1117; Dark background */
+    background-color: #162e51; /* Dark background */
+    color: #c9d1d9; /* Light text */
+}
+/* Custom class for the primary color theme */
+.theme-primary-bg {
+    background-color: rgb(var(--color-primary));
+}
+.theme-primary-text {
+    color: rgb(var(--color-primary));
+}
+.theme-accent-bg {
+    background-color: rgb(var(--color-accent));
+}
+.theme-accent-text {
+    color: rgb(var(--color-accent));
+}
+.text-shadow {
+    text-shadow: 0 0 5px rgba(var(--color-accent), 0.5);
+}
+.card {
+    background-color: #161b22;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #30363d;
+    /* Added transition for general card interaction */
+    transition: transform 0.3s ease;
+}
+/* --- Global Animation Styles --- *
+/* Border Glow Button Effect (Used for 'Extra Features' and Contacbuttons) */
+.animated-button {
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    display: block; /* Ensure it behaves like a block element for fulwidth */
+    border-radius: 12px;
+}
+/* Pseudo-element for the animated gradient border */
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        rgba(var(--color-accent), 0.7) 45deg,
+        rgba(var(--color-primary), 0.5) 180deg,
+        transparent 225deg
+    );
+    z-index: -1;
+    animation: spin 3s linear infinite;
+    transition: opacity 0.3s;
+}
+/* Inner container to hide overflow and apply background */
+.animated-button::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    background: #161b22; /* Inner card background */
+    border-radius: 10px;
+    z-index: -1;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+/* Subtle Card Pulse for Maxim */
+@keyframes subtle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.005); } /* Reduced scale for subtlety */
+}
+.pulse-subtle {
+    animation: subtle-pulse 6s ease-in-out infinite;
+}
+/* Wipe Animation for Detail Pane */
+@keyframes wipe-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.wipe-effect {
+    animation: wipe-in 0.4s ease-out forwards;
+}

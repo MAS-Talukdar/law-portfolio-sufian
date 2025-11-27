@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sufian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Styles/style.css">
+</head>
+<body class="min-h-screen">
+
+    <!-- Header Section -->
+    <header class="p-4 md:p-8 border-b border-gray-700">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold flex items-center mb-4 md:mb-0">
+                ABU SUFIAN TALUKDAR
+                <button id="accentToggle" class="ml-3 p-1 rounded-full hover:scale-110 transition-transform focus:outline-none" title="Surprise Interaction">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 theme-accent-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.5a1.5 1.5 0 011.902 0l1.523 1.137a1.5 1.5 0 001.037.147l1.714-.428a1.5 1.5 0 011.838 1.838l-.428 1.714a1.5 1.5 0 00.147 1.037l1.137 1.523a1.5 1.5 0 010 1.902l-1.137 1.523a1.5 1.5 0 00-.147 1.037l.428 1.714a1.5 1.5 0 01-1.838 1.838l-1.714-.428a1.5 1.5 0 00-1.037.147l-1.523 1.137a1.5 1.5 0 01-1.902 0l-1.523-1.137a1.5 1.5 0 00-1.037-.147l-1.714.428a1.5 1.5 0 01-1.838-1.838l.428-1.714a1.5 1.5 0 00-.147-1.037l-1.137-1.523a1.5 1.5 0 010-1.902l1.137-1.523a1.5 1.5 0 00.147-1.037l-.428-1.714a1.5 1.5 0 011.838-1.838l1.714.428a1.5 1.5 0 001.037-.147l1.523-1.137z" />
+                    </svg>
+                </button>
+            </h1>
+            <nav class="space-x-4">
+                <a href="#about" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">About</a>
+                <a href="#education" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">Education</a>
+                <a href="#interests" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">Interests</a>
+                <a href="#contact" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Grid: Switches from 1 column on mobile to 3 columns on desktop -->
+    <main class="max-w-6xl mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- Column 1 (Left Sidebar on Desktop): Profile, Maxim & Contact -->
+        <div class="lg:col-span-1 space-y-8">
+            <div>
+                <a href="#" target="_blank" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg hover:shadow-amber-500/50 block">
+                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
+                            <!-- Icon: Law -->
+                             <i class="fa-solid fa-scale-balanced h-5 w-5 theme-accent-text"></i>  
+                            <span class="text-sm font-semibold text-white">Upload your Presentation</span>
+                        </div>
+                    </a>
+            </div>
+            
+            <!-- NEW: Profile Picture Section -->
+            <section class="card p-6 flex flex-col items-center">
+                <div class="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-amber-400 shadow-xl theme-accent-text bg-gray-700 flex items-center justify-center transition-all duration-300 hover:scale-[1.02]">
+                    <!-- Placeholder Image URL - Replace the src with your actual picture! -->
+                    <img src="./assets/me.jpg" 
+                         alt="Profile Picture of [Your Name]" 
+                         class="w-full h-full object-cover">
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-4 text-white text-shadow">
+                    ABU SUFIAN
+                </h2>
+                <!-- <p class="text-base theme-primary-text mt-1 font-semibold">Juris Doctor Candidate</p> -->
+            </section>
+
+            <!-- Dynamic Legal Maxim of the Day (with subtle pulse animation) -->
+            <section class="card p-6 pulse-subtle" id="maxim">
+                <h2 class="text-xl font-bold mb-4 theme-accent-text">Legal Maxim of the Day</h2>
+                <div id="maxim-content">
+                    <div class="flex items-center space-x-2">
+                        <div class="h-4 w-4 theme-accent-bg rounded-full animate-pulse"></div>
+                        <p class="text-sm italic text-gray-400">Summoning legal wisdom...</p>
+                    </div>
+                </div>
+                <div id="maxim-sources" class="mt-4 text-xs text-gray-500 space-y-1"></div>
+            </section>
+
+            <!-- Quick Contact Card (NOW WITH ANIMATED BUTTONS) -->
+            <section class="card p-6" id="contact">
+                <h2 class="text-xl font-bold mb-4 theme-accent-text">Get in Touch</h2>
+                <p class="text-sm mb-4">I'm always open to discussing legal issue.</p>
+                <div class="space-y-4">
+                    <!-- Button 1: Email (Animated Border) -->
+                    <a href="mailto:mdabufiantalukdar8@gmail.com" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50 block">
+                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
+                            <!-- Icon: Mail -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 theme-accent-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span class="text-sm font-semibold text-white">Email Me Directly</span>
+                        </div>
+                    </a>
+
+                    <!-- Button 2: Facebook (Animated Border) -->
+                    <a href="https://www.facebook.com/md.abu.sufian.talukdar.0" target="_blank" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg hover:shadow-amber-500/50 block">
+                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
+                            <!-- Icon: Facebook -->
+                             <i class="fa-brands fa-facebook h-5 w-5 theme-accent-text"></i>  
+                            <span class="text-sm font-semibold text-white">Connect on Facebook</span>
+                        </div>
+                    </a>
+
+                    <!-- Location (Standard Text/Icon element - not interactive) -->
+                    <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-700/30 mt-4 border border-gray-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 theme-primary-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 7 8 12 8 12s8-5 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span class="text-sm text-gray-300">Location: Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2 (Main Content on Desktop): About Me & Education -->
+        <div class="lg:col-span-2 space-y-8">
+            <!-- About Me -->
+            <section class="card p-6" id="about">
+                <h2 class="text-2xl font-bold mb-4 theme-primary-text">About Me</h2>
+                <!-- <p class="text-base leading-relaxed">
+                    I am a dedicated 3L student at **Eastern University Department of Law**, passionately focused on the intersection of **Intellectual Property** and **Constitutional Law**. My academic approach is driven by a commitment to rigorous analysis and practical application. Outside of coursework, I serve as an editor for the Law Review and am actively involved in the Pro Bono Clinic, seeking to bridge the gap between legal theory and social impact.
+                </p> -->
+                <p class="text-base leading-relaxed">To be added soon.........</p>
+                <div class="mt-4 p-4 rounded-lg border border-gray-600 theme-accent-text bg-gray-900/50">
+                    <p class="text-sm italic font-medium">"The life of the law has not been logic; it has been experience." - Oliver Wendell Holmes Jr.</p>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="card p-6" id="education">
+                <h2 class="text-2xl font-bold mb-4 theme-primary-text">Education & Achievements</h2>
+                <div class="space-y-6">
+                    <!-- Law School -->
+                    <!-- <div>
+                        <h3 class="text-lg font-semibold text-white">[University Name] School of Law</h3>
+                        <p class="text-sm theme-accent-text">Juris Doctor (J.D.), Expected May 20XX</p>
+                        <ul class="list-disc list-inside ml-4 text-sm mt-1 space-y-1">
+                            <li>GPA: 3.8/4.0 (Top 10%)</li>
+                            <li>Activities: Law Review (Articles Editor), Moot Court Team (Finalist)</li>
+                            <li>Relevant Coursework: Advanced Torts, Administrative Law, Trial Advocacy</li>
+                        </ul>
+                    </div> -->
+                    <!-- Undergraduate -->
+                    <!-- <div>
+                        <h3 class="text-lg font-semibold text-white">[Undergraduate University]</h3>
+                        <p class="text-sm text-gray-400">B.A. Political Science, Graduated 20XX</p>
+                        <ul class="list-disc list-inside ml-4 text-sm mt-1">
+                            <li>Honors: Summa Cum Laude</li>
+                        </ul>
+                    </div> -->
+                    <h1 class="font-bold">To be added soon!</h1>
+                </div>
+            </section>
+            <section class="card p-6" id="education">
+                <h2 class="text-2xl font-bold mb-4 theme-primary-text">Important Links</h2>
+                <div class="space-y-6">
+                    <a href="https://drive.google.com/drive/u/0/folders/1whuJ8XpW4LFVayH0sSi7lyPrDM_Y8yyZ?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMjc1MjU0NjkyNTk4Mjc5AAEeQgcEMovMg3VB5Z6tcEm3KvzxqWAXQLwx7POHZQiaGf_jdKyxYZpbQFx5lMk_aem_S8m0TgPFnngiOxI7QOVLcw" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg bg-gray-700/30 hover:shadow-cyan-500/50 block" target="_blank">
+                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
+                            <!-- Icon: Map -->
+                            <img class="w-10" src="./assets/survey-map.png" alt="map-icon">
+                            <span class="text-sm font-bold text-white">Land Survey Maps</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3 (Full Width - Interests and Extra Features) -->
+        <div class="lg:col-span-3 space-y-8">
+             <!-- Legal Interests (Interactive) -->
+            <section class="card p-6" id="interests">
+                <h2 class="text-2xl font-bold mb-4 theme-primary-text">My Legal Focus</h2>
+                <!-- Responsive Grid: 2 columns on mobile, 4 columns on tablet/desktop -->
+                <div id="focus-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <!-- Interactive Interest Cards -->
+                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="IP Law">
+                        <p class="text-lg font-semibold theme-accent-text">Cyber Law</p>
+                        <p class="text-xs mt-1 text-gray-400 hidden md:block">Data privacy & protection</p>
+                    </div>
+                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="Con. Law">
+                        <p class="text-lg font-semibold theme-accent-text">Constitutional Law</p>
+                        <p class="text-xs mt-1 text-gray-400 hidden md:block">||</p>
+                    </div>
+                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="TP">
+                        <p class="text-lg font-semibold theme-accent-text">Property Law</p>
+                        <p class="text-xs mt-1 text-gray-400 hidden md:block">||</p>
+                    </div>
+                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="Pro Bono">
+                        <p class="text-lg font-semibold theme-accent-text">Pro Bono</p>
+                        <p class="text-xs mt-1 text-gray-400 hidden md:block">Access to Justice</p>
+                    </div>
+                </div>
+
+                <div id="interest-detail" class="mt-6 p-4 rounded-lg theme-primary-bg/20 border border-gray-600 text-base">
+                    <p class="text-gray-300">Hover over a focus area above to see a detailed explanation of my work and interest in that field.</p>
+                </div>
+            </section>
+
+            <!-- Extra Features Section with Animated Buttons -->
+            <section class="pt-4">
+                <h2 class="text-2xl font-bold mb-4 theme-primary-text border-b border-gray-700 pb-2">Extra Features & Tools</h2>
+                <!-- Responsive Grid: 1 column on mobile, 2 columns on tablet/desktop -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- Feature Button 1: Animated Border (Blue/Yellow Gradient) -->
+                    <button class="animated-button p-0.5 w-full h-32 flex items-center justify-center transition-shadow duration-300 hover:shadow-2xl hover:shadow-cyan-500/50">
+                        <div class="w-full h-full flex flex-col items-center justify-center p-4 rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 theme-accent-text mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <span class="text-lg font-bold text-white">Legal Database API</span>
+                            <span class="text-xs text-gray-400 mt-1">Access Case Law & Statutes</span>
+                        </div>
+                    </button>
+
+                    <!-- Feature Button 2: Animated Border (Blue/Yellow Gradient) -->
+                    <button class="animated-button p-0.5 w-full h-32 flex items-center justify-center transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-500/50">
+                        <div class="w-full h-full flex flex-col items-center justify-center p-4 rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 theme-accent-text mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span class="text-lg font-bold text-white">Moot Court Prep Tool</span>
+                            <span class="text-xs text-gray-400 mt-1">Argument Structure Generator</span>
+                        </div>
+                    </button>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="p-4 text-center text-sm text-gray-500 border-t border-gray-700 mt-8">
+        &copy; 2025 ABU SUFIAN TALUKDAR | Powered by SHERLOCK LAWYERS.
+    </footer>
+    <script type="module">
+        const maximContent = document.getElementById('maxim-content');
+        const maximSourcesDiv = document.getElementById('maxim-sources');
+        const accentToggle = document.getElementById('accentToggle');
+        const root = document.documentElement;
+        const interestDetail = document.getElementById('interest-detail');
+        const interestCards = document.querySelectorAll('.interest-card');
+
+
+        // --- 1. Dynamic Legal Maxim Feature (Gemini API) ---
+
+        // Exponential backoff helper
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        /**
+         * Fetches a legal maxim using the Gemini API with Google Search grounding.
+         */
+        async function fetchLegalMaxim() {
+            const apiKey = ""; // API key is provided by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            // Define the prompt and system instruction
+            const systemPrompt = "You are a friendly and knowledgeable AI assistant for a law student's personal website. Generate a single, concise, and interesting legal maxim or Latin phrase, and provide a short, modern interpretation of it. The maxim and the interpretation must be separated by a dash. Do not include any introductory or concluding text.";
+            const userQuery = "Generate a powerful and relevant Legal Maxim of the Day.";
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }], // Enable grounding for accuracy
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            const MAX_RETRIES = 5;
+            for (let i = 0; i < MAX_RETRIES; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        const candidate = result.candidates?.[0];
+
+                        if (candidate && candidate.content?.parts?.[0]?.text) {
+                            const text = candidate.content.parts[0].text.trim();
+                            const parts = text.split(/\s*-\s*/);
+                            const maxim = parts[0] || "No maxim found.";
+                            const interpretation = parts.slice(1).join(' - ') || "A concise legal principle.";
+
+                            // 1. Update text content
+                            maximContent.innerHTML = `
+                                <p class="text-2xl font-bold theme-accent-text text-shadow">${maxim}</p>
+                                <p class="mt-2 text-sm italic text-gray-300">${interpretation}</p>
+                            `;
+
+                            // 2. Extract and display sources
+                            const groundingMetadata = candidate.groundingMetadata;
+                            maximSourcesDiv.innerHTML = ''; // Clear previous sources
+                            if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                                let sources = groundingMetadata.groundingAttributions
+                                    .map(attribution => ({
+                                        uri: attribution.web?.uri,
+                                        title: attribution.web?.title,
+                                    }))
+                                    .filter(source => source.uri && source.title);
+
+                                if (sources.length > 0) {
+                                    const uniqueSources = Array.from(new Set(sources.map(s => s.uri)))
+                                        .map(uri => sources.find(s => s.uri === uri));
+
+                                    maximSourcesDiv.innerHTML = '<p class="font-semibold text-gray-500 mb-1">Sources:</p>';
+                                    uniqueSources.forEach((source, index) => {
+                                        const link = document.createElement('a');
+                                        link.href = source.uri;
+                                        link.target = '_blank';
+                                        link.className = 'hover:underline block text-gray-500';
+                                        link.textContent = `${index + 1}. ${source.title}`;
+                                        maximSourcesDiv.appendChild(link);
+                                    });
+                                }
+                            }
+                            return; // Success, exit the function
+                        } else {
+                            throw new Error('API response content was empty.');
+                        }
+                    } else {
+                        throw new Error(`API returned status ${response.status}`);
+                    }
+                } catch (error) {
+                    console.error(`Attempt ${i + 1} failed:`, error.message);
+                    if (i < MAX_RETRIES - 1) {
+                        await sleep(Math.pow(2, i) * 1000); // Exponential backoff
+                    } else {
+                        // Final fallback message on failure
+                        maximContent.innerHTML = `
+                            <p class="text-2xl font-bold text-red-500">Error Loading Maxim</p>
+                            <p class="mt-2 text-sm italic text-gray-400">Please refresh. Defaulting to a classic: <span class="theme-accent-text">Ignorantia juris non excusat.</span></p>
+                        `;
+                    }
+                }
+            }
+        }
+
+
+        // --- 2. Secret Accent Toggle Feature ---
+
+        const ACCENT_COLORS = [
+            '251, 191, 36', // Amber (Default)
+            '239, 68, 68',  // Red
+            '34, 197, 94',  // Green
+            '99, 102, 241', // Indigo
+            '255, 99, 71'   // Tomato (A surprise!)
+        ];
+        let currentAccentIndex = 0;
+
+        accentToggle.addEventListener('click', () => {
+            // Cycle to the next color
+            currentAccentIndex = (currentAccentIndex + 1) % ACCENT_COLORS.length;
+            const newColor = ACCENT_COLORS[currentAccentIndex];
+
+            // Apply the new color to the root variables
+            root.style.setProperty('--color-accent', newColor);
+
+            // Optional: Show a temporary visual indicator/pulse
+            accentToggle.classList.add('scale-150');
+            setTimeout(() => {
+                accentToggle.classList.remove('scale-150');
+            }, 300);
+        });
+
+
+        // --- 3. Interactive Legal Focus Detail (Updated with wipe animation) ---
+
+        const interestData = {
+            "IP Law": "Data privacy and protection: Regulations concerning the collection, use, and protection of personal information in digital formats.",
+            "Con. Law": "A deep interest in the Amendment, particularly the balancing act between free speech principles and the regulation of deepfakes and misinformation in political discourse.",
+            "TP": "Transfer of property: Laws dictate how property is transferred from one person or entity to another. In Bangladesh, this is primarily governed by the Transfer of Property Act, 1882, which defines a living person as including corporations and associations. ",
+            "Pro Bono": "|||",
+        };
+
+        interestCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const interest = this.getAttribute('data-interest');
+
+                // Set content and trigger wipe animation
+                interestDetail.innerHTML = interestData[interest];
+                interestDetail.classList.remove('wipe-effect'); // Reset animation
+                void interestDetail.offsetWidth; // Trigger reflow for re-animation
+                interestDetail.classList.add('wipe-effect');
+            });
+            card.addEventListener('mouseleave', function() {
+                // Keep the last focused text
+            });
+        });
+
+
+        // Initialize on load
+        window.onload = function() {
+            fetchLegalMaxim();
+        };
+
+        // --- Firebase/Auth/Initialization Placeholder (Mandatory for real-world apps) ---
+        // We must initialize Firebase to conform to the required environment setup, even if not used for data.
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app, db, auth;
+
+        // Function to initialize Firebase and authenticate
+        async function initializeFirebase() {
+            if (!firebaseConfig) {
+                console.error("Firebase configuration is missing.");
+                return;
+            }
+
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                // Authenticate the user
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        console.log("Firebase initialized. User ID:", user.uid);
+                    } else {
+                        console.log("Firebase initialized. User is anonymous.");
+                    }
+                });
+            } catch (error) {
+                console.error("Error initializing Firebase:", error);
+            }
+        }
+
+        initializeFirebase();
+
+    </script>
+</body>
+</html>
