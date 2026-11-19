@@ -17,7 +17,7 @@ document.documentElement.setAttribute("data-theme", initialTheme);
 function updateThemeButton() {
   const currentTheme = document.documentElement.getAttribute("data-theme");
 
-  themeToggle.textContent = currentTheme === "dark" ? "☀" : "☾";
+  themeToggle.textContent = currentTheme === "dark" ? "☾" : "☀";
 
   themeToggle.setAttribute(
     "aria-label",
@@ -43,12 +43,15 @@ themeToggle.addEventListener("click", () => {
 // 2. MOBILE NAVIGATION
 // =================================
 
-const menuToggle = document.getElementById("menu-toggle");
 
+const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
+// Toggle mobile menu
 menuToggle.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("active");
+
+  navLinks.classList.toggle("hidden", !isOpen);
 
   menuToggle.setAttribute("aria-expanded", isOpen);
 
@@ -56,13 +59,12 @@ menuToggle.addEventListener("click", () => {
 });
 
 // Close menu after clicking a navigation link
-
-document.querySelectorAll(".nav-links a").forEach((link) => {
+document.querySelectorAll("#nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
+    navLinks.classList.add("hidden");
 
     menuToggle.setAttribute("aria-expanded", "false");
-
     menuToggle.textContent = "☰";
   });
 });
