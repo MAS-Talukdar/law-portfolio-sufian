@@ -1,472 +1,801 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sufian</title>
-    <link rel="shortcut icon" href="./assets/my-photo(1).png" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./Styles/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73E1HT2E75"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
+<!doctype html>
+<html lang="en" data-theme="light" class="scroll-smooth scroll-pt-24">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Academic portfolio of a Legal Researcher and Writer. Explore legal research, case reviews, publications and academic interests."
+    />
+    <meta name="author" content="Md. Abu Sufian Talukdar" />
+    <link rel="shortcut icon" href="./assets/fevicon.png" type="image/x-icon">
 
-     gtag('config', 'G-73E1HT2E75');
-    </script>
-</head>
-<body class="min-h-screen">
+    <title>Abu Sufian | Legal Researcher & Writer</title>
 
-    <!-- Header Section -->
-    <header class="p-4 md:p-8 border-b border-gray-700">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-3xl md:text-4xl font-extrabold flex items-center mb-4 md:mb-0">
-                ABU SUFIAN TALUKDAR
-                <button id="accentToggle" class="ml-3 p-1 rounded-full hover:scale-110 transition-transform focus:outline-none" title="Surprise Interaction">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 theme-accent-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.5a1.5 1.5 0 011.902 0l1.523 1.137a1.5 1.5 0 001.037.147l1.714-.428a1.5 1.5 0 011.838 1.838l-.428 1.714a1.5 1.5 0 00.147 1.037l1.137 1.523a1.5 1.5 0 010 1.902l-1.137 1.523a1.5 1.5 0 00-.147 1.037l.428 1.714a1.5 1.5 0 01-1.838 1.838l-1.714-.428a1.5 1.5 0 00-1.037.147l-1.523 1.137a1.5 1.5 0 01-1.902 0l-1.523-1.137a1.5 1.5 0 00-1.037-.147l-1.714.428a1.5 1.5 0 01-1.838-1.838l.428-1.714a1.5 1.5 0 00-.147-1.037l-1.137-1.523a1.5 1.5 0 010-1.902l1.137-1.523a1.5 1.5 0 00.147-1.037l-.428-1.714a1.5 1.5 0 011.838-1.838l1.714.428a1.5 1.5 0 001.037-.147l1.523-1.137z" />
-                    </svg>
-                </button>
-            </h1>
-            <nav class="space-x-4">
-                <a href="#about" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">About</a>
-                <a href="#education" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">Education</a>
-                <a href="#interests" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">Interests</a>
-                <a href="#contact" class="text-sm md:text-base font-medium hover:text-amber-400 transition-colors duration-300">Contact</a>
-            </nav>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inconsolata:wght@500;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v4 Browser CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Theme Tokens mapped to Tailwind v4 -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bg: var(--bg);
+        --color-surface: var(--surface);
+        --color-text: var(--text);
+        --color-muted: var(--muted);
+        --color-accent: var(--accent);
+        --color-border: var(--border);
+        --color-navy: var(--navy);
+
+        --font-heading: "Playfair Display", Georgia, serif;
+        --font-body: "DM Sans", Arial, sans-serif;
+        --font-console: "Inconsolata", monospace;
+      }
+
+      :root {
+        color-scheme: light;
+        --bg: #f7f5ef;
+        --surface: #ffffff;
+        --text: #172538;
+        --muted: #687383;
+        --accent: #a88b55;
+        --border: #e5e0d5;
+        --navy: #101c2c;
+      }
+
+      [data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #101c2c;
+        --surface: #19283a;
+        --text: #f5f1e8;
+        --muted: #b0bac7;
+        --accent: #c5a56b;
+        --border: #304052;
+        --navy: #f5f1e8;
+      }
+
+      @keyframes form-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .spinner {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: form-spin 0.7s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-bg text-text font-body leading-[1.7] transition-colors duration-200 antialiased selection:bg-accent selection:text-white"
+  >
+    <!-- NAVIGATION HEADER -->
+    <header
+      class="sticky top-0 z-50 bg-bg/95 backdrop-blur-sm border-b border-border transition-colors duration-200"
+    >
+      <nav
+        class="w-[90%] max-w-[1120px] mx-auto min-h-[72px] md:min-h-[82px] flex flex-wrap items-center justify-between py-2"
+      >
+        <!-- Brand / Logo -->
+        <a
+          href="#home"
+          class="flex items-center gap-2.5 no-underline font-bold"
+        >
+          <span
+            class="font-console text-accent text-xl sm:text-2xl md:text-[28px] tracking-tight"
+          >
+            MD. ABU SUFIAN TALUKDAR
+          </span>
+        </a>
+
+        <!-- Action Controls (Theme Toggle + Mobile Menu Toggle) -->
+        <div class="flex items-center gap-3 md:order-3">
+          <button
+            id="theme-toggle"
+            class="w-[42px] h-[42px] border border-border rounded-full bg-surface text-text flex items-center justify-center cursor-pointer hover:border-accent transition-colors"
+            aria-label="Switch to dark mode"
+          >
+            ☾
+          </button>
+
+          <button
+            id="menu-toggle"
+            class="w-[42px] h-[42px] border border-border rounded-full bg-surface text-text flex md:hidden items-center justify-center cursor-pointer hover:border-accent transition-colors"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
         </div>
+
+        <!-- Navigation Links -->
+        <div
+          id="nav-links"
+          class="hidden w-full md:w-auto md:flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-[23px] pt-4 pb-2 md:py-0 border-t md:border-t-0 border-border mt-3 md:mt-0 md:order-2"
+        >
+          <a
+            href="#home"
+            class="font-console nav-item text-sm md:text-[13px] text-muted hover:text-accent transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="font-console nav-item text-sm md:text-[13px] text-muted hover:text-accent transition-colors"
+            >About</a
+          >
+          <a
+            href="#research"
+            class="font-console nav-item text-sm md:text-[13px] text-muted hover:text-accent transition-colors"
+            >Research</a
+          >
+          <a
+            href="#cases"
+            class="font-console nav-item text-sm md:text-[13px] text-muted hover:text-accent transition-colors"
+            >Case Reviews</a
+          >
+          <a
+            href="#publications"
+            class="font-console nav-item text-sm md:text-[13px] text-muted hover:text-accent transition-colors"
+            >Writing</a
+          >
+          <a
+            href="#contact"
+            class="font-console nav-item text-sm md:text-[13px] text-muted hover:text-accent transition-colors"
+            >Contact</a
+          >
+        </div>
+      </nav>
     </header>
 
-    <!-- Main Content Grid: Switches from 1 column on mobile to 3 columns on desktop -->
-    <main class="max-w-6xl mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <main>
+      <!-- HERO SECTION -->
+      <section
+        id="home"
+        class="w-[90%] max-w-[1120px] mx-auto md:min-h-[620px] grid grid-cols-1 md:grid-cols-[1.7fr_0.8fr] items-center gap-10 md:gap-[70px] py-16 md:py-[100px]"
+      >
+        <div class="hero-content">
+          <span
+            class="font-console inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[22px] uppercase"
+          >
+            LAW STUDENT · LEGAL RESEARCHER · WRITER
+          </span>
 
-        <!-- Column 1 (Left Sidebar on Desktop): Profile, Maxim & Contact -->
-        <div class="lg:col-span-1 space-y-8">
-            <div>
-                <a href="#" target="_blank" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg hover:shadow-amber-500/50 block">
-                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
-                            <!-- Icon: Law -->
-                             <i class="fa-solid fa-scale-balanced h-5 w-5 theme-accent-text"></i>  
-                            <!-- <span class="text-sm font-semibold text-white">Upload your Presentation</span> -->
-                        </div>
-                    </a>
+          <h1
+            class="font-heading text-[clamp(38px,6vw,68px)] font-medium leading-[1.17] tracking-[-1.5px]"
+          >
+            Exploring Law.
+            <span class="text-accent">Questioning Ideas.</span>
+            Understanding Justice.
+          </h1>
+
+          <p class="font-console text-muted max-w-[600px] mt-[26px] text-base">
+            I am a law student from Bangladesh with a keen interest in legal
+            research, judicial reasoning, constitutional development and the
+            evolving relationship between law and society.
+          </p>
+
+          <div class="flex flex-wrap gap-[14px] mt-[30px]">
+            <a
+              href="#research"
+              class="font-console inline-block no-underline px-[22px] py-[12px] border border-accent bg-accent text-white text-[13px] font-semibold transition-opacity hover:opacity-85"
+            >
+              Explore My Research
+            </a>
+
+            <a
+              href="#about"
+              class="font-console inline-block no-underline px-[22px] py-[12px] border border-accent text-text text-[13px] font-semibold transition-colors hover:bg-surface"
+            >
+              About Me
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-6 mt-10">
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-console text-xs no-underline text-muted hover:text-accent transition-colors"
+            >
+              LinkedIn ↗
+            </a>
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-console text-xs no-underline text-muted hover:text-accent transition-colors"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              href="mailto:mdabusufiantalukdar8@gmail.com"
+              class="font-console text-xs no-underline text-muted hover:text-accent transition-colors"
+            >
+              Email ↗
+            </a>
+            <a
+              href="https://www.facebook.com/md.abu.sufian.talukdar.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-console text-xs no-underline text-muted hover:text-accent transition-colors"
+            >
+              Facebook ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Image / Placeholder -->
+        <div class="text-center mt-4 md:mt-0">
+          <div
+            class="w-[190px] sm:w-[230px] aspect-[4/5] mx-auto bg-surface border border-border flex flex-col items-center justify-center text-accent font-heading tracking-[4px] text-xl overflow-hidden relative"
+          >
+            <img
+              src="./assets/Image 2025-09-06 at 13.19.58_4f408ec7.jpg"
+              alt="Md. Abu Sufian Talukdar"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden flex-col items-center justify-center w-full h-full p-4 text-center"
+            >
+              <span>ABU</span>
+              <span>SUFIAN</span>
             </div>
-            
-            <!-- NEW: Profile Picture Section -->
-            <section class="card p-6 flex flex-col items-center">
-                <div class="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-amber-400 shadow-xl theme-accent-text bg-gray-700 flex items-center justify-center transition-all duration-300 hover:scale-[1.02]">
-                    <!-- Placeholder Image URL - Replace the src with your actual picture! -->
-                    <img src="./assets/me.jpg" 
-                         alt="Profile Picture of [Your Name]" 
-                         class="w-full h-full object-cover">
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold mt-4 text-white text-shadow">
-                    ABU SUFIAN
-                </h2>
-                <!-- <p class="text-base theme-primary-text mt-1 font-semibold">Juris Doctor Candidate</p> -->
-            </section>
+          </div>
 
-            <!-- Dynamic Legal Maxim of the Day (with subtle pulse animation) -->
-            <section class="card p-6 pulse-subtle" id="maxim">
-                <h2 class="text-xl font-bold mb-4 theme-accent-text">Legal Maxim of the Day</h2>
-                <div id="maxim-content">
-                    <div class="flex items-center space-x-2">
-                        <div class="h-4 w-4 theme-accent-bg rounded-full animate-pulse"></div>
-                        <p class="text-sm italic text-gray-400">Summoning legal wisdom...</p>
-                    </div>
-                </div>
-                <div id="maxim-sources" class="mt-4 text-xs text-gray-500 space-y-1"></div>
-            </section>
+          <p class="font-console text-xs text-muted mt-3">
+            Based in Bangladesh
+          </p>
+          <p class="font-console text-xs text-muted mt-1">
+            Interested in global legal sector
+          </p>
+        </div>
+      </section>
 
-            <!-- Quick Contact Card (NOW WITH ANIMATED BUTTONS) -->
-            <section class="card p-6" id="contact">
-                <h2 class="text-xl font-bold mb-4 theme-accent-text">Get in Touch</h2>
-                <p class="text-sm mb-4">I'm always open to discussing legal issue.</p>
-                <div class="space-y-4">
-                    <!-- Button 1: Email (Animated Border) -->
-                    <a href="mailto:mdabusufiantalukdar8@gmail.com" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg hover:shadow-cyan-500/50 block">
-                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
-                            <!-- Icon: Mail -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 theme-accent-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span class="text-sm font-semibold text-white">Email Me Directly</span>
-                        </div>
-                    </a>
-
-                    <!-- Button 2: Facebook (Animated Border) -->
-                    <a href="https://www.facebook.com/md.abu.sufian.talukdar.0" target="_blank" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg hover:shadow-amber-500/50 block">
-                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
-                            <!-- Icon: Facebook -->
-                             <i class="fa-brands fa-facebook h-5 w-5 theme-accent-text"></i>  
-                            <span class="text-sm font-semibold text-white">Connect on Facebook</span>
-                        </div>
-                    </a>
-
-                    <!-- Location (Standard Text/Icon element - not interactive) -->
-                    <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-700/30 mt-4 border border-gray-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 theme-primary-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 7 8 12 8 12s8-5 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span class="text-sm text-gray-300">Location: Dhaka, Bangladesh</span>
-                    </div>
-                </div>
-            </section>
+      <!-- 01 / ABOUT SECTION -->
+      <section
+        id="about"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="font-console inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            01 / INTRODUCTION
+          </span>
+          <h2
+            class="font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            About Me
+          </h2>
         </div>
 
-        <!-- Column 2 (Main Content on Desktop): About Me & Education -->
-        <div class="lg:col-span-2 space-y-8">
-            <!-- About Me -->
-            <section class="card p-6" id="about">
-                <h2 class="text-2xl font-bold mb-4 theme-primary-text">About Me</h2>
-                <!-- <p class="text-base leading-relaxed">
-                    I am a dedicated 3L student at **Eastern University Department of Law**, passionately focused on the intersection of **Intellectual Property** and **Constitutional Law**. My academic approach is driven by a commitment to rigorous analysis and practical application. Outside of coursework, I serve as an editor for the Law Review and am actively involved in the Pro Bono Clinic, seeking to bridge the gap between legal theory and social impact.
-                </p> -->
-                <p class="text-base leading-relaxed">To be added soon.........</p>
-                <div class="mt-4 p-4 rounded-lg border border-gray-600 theme-accent-text bg-gray-900/50">
-                    <p class="text-sm italic font-medium">"The life of the law has not been logic; it has been experience." - Oliver Wendell Holmes Jr.</p>
-                </div>
-            </section>
+        <div class="font-console max-w-[780px] space-y-5 text-muted">
+          <p>
+            I am an undergraduate law student in Bangladesh, developing my
+            academic interests in legal research, statutory interpretation,
+            judicial reasoning and comparative legal studies.
+          </p>
 
-            <!-- Education -->
-            <section class="card p-6" id="education">
-                <h2 class="text-2xl font-bold mb-4 theme-primary-text">Education & Achievements</h2>
-                <div class="space-y-6">
-                    <!-- Law School -->
-                    <!-- <div>
-                        <h3 class="text-lg font-semibold text-white">[University Name] School of Law</h3>
-                        <p class="text-sm theme-accent-text">Juris Doctor (J.D.), Expected May 20XX</p>
-                        <ul class="list-disc list-inside ml-4 text-sm mt-1 space-y-1">
-                            <li>GPA: 3.8/4.0 (Top 10%)</li>
-                            <li>Activities: Law Review (Articles Editor), Moot Court Team (Finalist)</li>
-                            <li>Relevant Coursework: Advanced Torts, Administrative Law, Trial Advocacy</li>
-                        </ul>
-                    </div> -->
-                    <!-- Undergraduate -->
-                    <!-- <div>
-                        <h3 class="text-lg font-semibold text-white">[Undergraduate University]</h3>
-                        <p class="text-sm text-gray-400">B.A. Political Science, Graduated 20XX</p>
-                        <ul class="list-disc list-inside ml-4 text-sm mt-1">
-                            <li>Honors: Summa Cum Laude</li>
-                        </ul>
-                    </div> -->
-                    <h1 class="font-bold">To be added soon!</h1>
-                </div>
-            </section>
-            <section class="card p-6" id="education">
-                <h2 class="text-2xl font-bold mb-4 theme-primary-text">Important Links</h2>
-                <div class="space-y-6">
-                    <!-- <a href="https://drive.google.com/drive/u/0/folders/1whuJ8XpW4LFVayH0sSi7lyPrDM_Y8yyZ?fbclid=IwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMjc1MjU0NjkyNTk4Mjc5AAEeQgcEMovMg3VB5Z6tcEm3KvzxqWAXQLwx7POHZQiaGf_jdKyxYZpbQFx5lMk_aem_S8m0TgPFnngiOxI7QOVLcw" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg bg-gray-700/30 hover:shadow-cyan-500/50 block" target="_blank">
-                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
-                            <img class="w-10" src="./assets/survey-map.png" alt="map-icon">
-                            <span class="text-sm font-bold text-white">Land Survey Maps</span>
-                        </div>
-                    </a> -->
-                <div class="space-y-6">
-                    <a href="https://free.mouzamap.tech/" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg bg-gray-700/30 hover:shadow-cyan-500/50 block" target="_blank">
-                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
-                            <img class="w-10" src="./assets/survey-map.png" alt="map-icon">
-                            <span class="text-sm font-bold text-white">Land Survey Maps</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="space-y-6">
-                    <a href="#" class="animated-button rounded-xl p-0.5 w-full transition-shadow duration-300 hover:shadow-lg bg-gray-700/30 hover:shadow-cyan-500/50 block" target="_blank">
-                        <div class="w-full h-full flex items-center justify-center p-3 rounded-xl bg-[#161b22] space-x-3">
-                            <img class="w-10" src="./assets/ai.png" alt="ai-icon">
-                            <span class="text-sm font-bold text-white">AI Chat-Bot</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
+          <p>
+            I believe that understanding law requires more than reading
+            statutory provisions. It requires critical thinking, careful
+            analysis of judicial decisions and an appreciation of the social
+            context in which law operates.
+          </p>
+
+          <p>
+            Through this platform, I document my research, legal observations,
+            case reviews and academic writing.
+          </p>
+        </div>
+      </section>
+
+      <!-- 02 / RESEARCH INTERESTS -->
+      <section
+        id="research"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            02 / ACADEMIC INTERESTS
+          </span>
+          <h2
+            class="font-console font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            Research Interests
+          </h2>
+          <p class="text-muted mt-3 text-sm">
+            Areas of law I study and explore.
+          </p>
         </div>
 
-        <!-- Column 3 (Full Width - Interests and Extra Features) -->
-        <div class="lg:col-span-3 space-y-8">
-             <!-- Legal Interests (Interactive) -->
-            <section class="card p-6" id="interests">
-                <h2 class="text-2xl font-bold mb-4 theme-primary-text">My Legal Focus</h2>
-                <!-- Responsive Grid: 2 columns on mobile, 4 columns on tablet/desktop -->
-                <div id="focus-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <!-- Interactive Interest Cards -->
-                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="IP Law">
-                        <p class="text-lg font-semibold theme-accent-text">Cyber Law</p>
-                        <p class="text-xs mt-1 text-gray-400 hidden md:block">Data privacy & protection</p>
-                    </div>
-                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="Con. Law">
-                        <p class="text-lg font-semibold theme-accent-text">Constitutional Law</p>
-                        <p class="text-xs mt-1 text-gray-400 hidden md:block">||</p>
-                    </div>
-                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="TP">
-                        <p class="text-lg font-semibold theme-accent-text">Property Law</p>
-                        <p class="text-xs mt-1 text-gray-400 hidden md:block">||</p>
-                    </div>
-                    <div class="interest-card p-4 rounded-lg border-2 border-gray-600 hover:border-amber-400 transition-all duration-300 cursor-pointer" data-interest="Pro Bono">
-                        <p class="text-lg font-semibold theme-accent-text">Pro Bono</p>
-                        <p class="text-xs mt-1 text-gray-400 hidden md:block">Access to Justice</p>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article
+            class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          >
+            <span
+              class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+              >01</span
+            >
+            <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+              Constitutional Law
+            </h3>
+            <p class="text-muted text-[13px]">
+              Constitutional interpretation, fundamental rights and judicial
+              review.
+            </p>
+          </article>
 
-                <div id="interest-detail" class="mt-6 p-4 rounded-lg theme-primary-bg/20 border border-gray-600 text-base">
-                    <p class="text-gray-300">Hover over a focus area above to see a detailed explanation of my work and interest in that field.</p>
-                </div>
-            </section>
+          <article
+            class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          >
+            <span
+              class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+              >02</span
+            >
+            <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+              Criminal Law
+            </h3>
+            <p class="text-muted text-[13px]">
+              Criminal liability, statutory interpretation and principles of
+              criminal justice.
+            </p>
+          </article>
 
-            <!-- Extra Features Section with Animated Buttons -->
-            <section class="pt-4">
-                <h2 class="text-2xl font-bold mb-4 theme-primary-text border-b border-gray-700 pb-2">Extra Features & Tools</h2>
-                <!-- Responsive Grid: 1 column on mobile, 2 columns on tablet/desktop -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <article
+            class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          >
+            <span
+              class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+              >03</span
+            >
+            <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+              Civil &amp; Property Law
+            </h3>
+            <p class="text-muted text-[13px]">
+              Civil procedure, property rights, land disputes and registration
+              law.
+            </p>
+          </article>
 
-                    <!-- Feature Button 1: Animated Border (Blue/Yellow Gradient) -->
-                    <button class="animated-button p-0.5 w-full h-32 flex items-center justify-center transition-shadow duration-300 hover:shadow-2xl hover:shadow-cyan-500/50">
-                        <div class="w-full h-full flex flex-col items-center justify-center p-4 rounded-xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 theme-accent-text mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                            <a href="">
-                                <span class="text-lg font-bold text-white">Legal Chat-Bot</span>
-                            </a>
-                            <span class="text-xs text-gray-400 mt-1">Access Case Law & Statutes</span>
-                        </div>
-                    </button>
+          <article
+            class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          >
+            <span
+              class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+              >04</span
+            >
+            <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+              Jurisprudence
+            </h3>
+            <p class="text-muted text-[13px]">
+              Legal philosophy, theories of justice and the nature of law.
+            </p>
+          </article>
 
-                    <!-- Feature Button 2: Animated Border (Blue/Yellow Gradient) -->
-                    <button class="animated-button p-0.5 w-full h-32 flex items-center justify-center transition-shadow duration-300 hover:shadow-2xl hover:shadow-amber-500/50">
-                        <div class="w-full h-full flex flex-col items-center justify-center p-4 rounded-xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 theme-accent-text mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                            <span class="text-lg font-bold text-white">Moot Court Prep Tool</span>
-                            <span class="text-xs text-gray-400 mt-1">Argument Structure Generator</span>
-                        </div>
-                    </button>
+          <article
+            class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          >
+            <span
+              class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+              >05</span
+            >
+            <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+              International Law
+            </h3>
+            <p class="text-muted text-[13px]">
+              International legal principles, treaties and comparative legal
+              systems.
+            </p>
+          </article>
 
-                </div>
-            </section>
+          <article
+            class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+          >
+            <span
+              class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+              >06</span
+            >
+            <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+              Legal Technology
+            </h3>
+            <p class="text-muted text-[13px]">
+              Legal research tools, artificial intelligence and access to
+              justice.
+            </p>
+          </article>
         </div>
+      </section>
+
+      <!-- 03 / CASE REVIEWS -->
+      <section
+        id="cases"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            03 / JUDICIAL ANALYSIS
+          </span>
+          <h2
+            class="font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            Case Reviews
+          </h2>
+          <p class="text-muted mt-3 text-sm">
+            Selected judicial decisions and legal analysis.
+          </p>
+        </div>
+
+        <div
+          class="max-w-[800px] p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+        >
+          <span
+            class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+            >FEATURED CASE</span
+          >
+          <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+            Judicial Decisions &amp; Legal Principles
+          </h3>
+          <p class="font-console text-muted text-[13px]">
+            Explore my analysis of landmark judgments, legal reasoning, ratio
+            decidendi and their implications for the development of law.
+          </p>
+          <a
+            href="mailto:mdabusufiantalukdar8@gmail.com"
+            class="font-console inline-block mt-5 text-accent no-underline text-[13px] font-semibold hover:opacity-80 transition-opacity"
+          >
+            Explore case analysis ↗
+          </a>
+        </div>
+      </section>
+
+      <!-- 04 / PUBLICATIONS -->
+      <section
+        id="publications"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            04 / LEGAL WRITING
+          </span>
+          <h2
+            class="font-console font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            Research &amp; Publications
+          </h2>
+          <p class="font-console text-muted mt-3 text-sm">
+            Articles, essays and academic contributions.
+          </p>
+        </div>
+
+        <div
+          class="p-[30px] bg-surface border border-border transition-all duration-200 hover:-translate-y-1 hover:border-accent"
+        >
+          <span
+            class="block text-accent text-[11px] tracking-[1.5px] font-bold mb-5"
+            >WRITING PORTFOLIO</span
+          >
+          <h3 class="font-console font-heading text-[21px] font-medium mb-3">
+            Legal Research &amp; Academic Writing
+          </h3>
+          <p class="font-console text-muted text-[13px]">
+            This section will feature my published articles, research papers,
+            case comments and academic essays.
+          </p>
+          <p class="font-console text-muted text-[13px] mt-3">
+            Publications will be added as they become available.
+          </p>
+        </div>
+      </section>
+
+      <!-- 05 / EDUCATION -->
+      <section
+        id="education"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            05 / ACADEMIC BACKGROUND
+          </span>
+          <h2
+            class="font-console font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            Education
+          </h2>
+        </div>
+
+        <div class="flex gap-5 p-[25px] border-l-2 border-accent bg-surface">
+          <span
+            class="w-2.5 h-2.5 rounded-full bg-accent shrink-0 mt-[9px]"
+          ></span>
+          <div>
+            <h3 class="font-console font-heading font-medium text-lg">
+              Undergraduate Law Student
+            </h3>
+            <p class="font-console text-sm mt-1">
+              Eastern University · Bangladesh
+            </p>
+            <p class="font-console text-muted text-[13px] mt-1">
+              LL.B || 14 July 2024 - Present.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 / SKILLS & COMPETENCIES -->
+      <section
+        id="skills"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            06 / CAPABILITIES
+          </span>
+          <h2
+            class="font-console font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            Skills &amp; Competencies
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Legal Research
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Case Analysis
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Legal Writing
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Statutory Interpretation
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Critical Thinking
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Legal Drafting
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Comparative Legal Research
+          </span>
+          <span
+            class="font-console px-[17px] py-[10px] bg-surface border border-border text-[13px] text-muted hover:border-accent transition-colors"
+          >
+            Legal Technology
+          </span>
+        </div>
+      </section>
+
+      <!-- 07 / CONTACT SECTION -->
+      <section
+        id="contact"
+        class="w-[90%] max-w-[1120px] mx-auto py-16 md:py-[95px] border-t border-border"
+      >
+        <div class="mb-[45px]">
+          <span
+            class="font-console inline-block text-accent text-[11px] font-bold tracking-[2px] mb-[14px] uppercase"
+          >
+            07 / GET IN TOUCH
+          </span>
+          <h2
+            class="font-console font-heading text-[clamp(32px,5vw,44px)] font-medium leading-[1.2]"
+          >
+            Contact
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-9 md:gap-[60px] items-start"
+        >
+          <!-- Contact Details -->
+          <div>
+            <h3
+              class="font-console font-heading text-[25px] font-medium mb-[15px]"
+            >
+              Academic &amp; Research Inquiries
+            </h3>
+            <p class="font-console text-muted text-sm mb-[35px]">
+              Feel free to reach out for academic discussions, research
+              collaborations, or feedback on my legal writing.
+            </p>
+
+            <div class="mb-6">
+              <span
+                class="font-console block text-[11px] uppercase tracking-[1px] text-accent mb-[5px]"
+              >
+                Email
+              </span>
+              <a
+                href="mailto:mdabusufiantalukdar8@gmail.com"
+                class="text-text text-sm no-underline hover:text-accent transition-colors break-all"
+              >
+                mdabusufiantalukdar8@gmail.com
+              </a>
+            </div>
+
+            <div class="mb-6">
+              <span
+                class="font-console block text-[11px] uppercase tracking-[1px] text-accent mb-[5px]"
+              >
+                Location
+              </span>
+              <p class="font-console text-text text-sm">Bangladesh</p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form
+            id="contact-form"
+            class="font-console p-6 sm:p-[35px] bg-surface border border-border"
+          >
+            <div class="mb-[22px]">
+              <label
+                for="from_name"
+                class="block text-[13px] font-semibold mb-[9px]"
+              >
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="from_name"
+                name="from_name"
+                placeholder="Your full name"
+                required
+                class="w-full px-[15px] py-[13px] bg-bg text-text border border-border font-body text-[13px] outline-none rounded-[3px] focus:border-accent placeholder:text-muted/70 transition-colors"
+              />
+            </div>
+
+            <div class="mb-[22px]">
+              <label
+                for="from_email"
+                class="block text-[13px] font-semibold mb-[9px]"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="from_email"
+                name="from_email"
+                placeholder="your@email.com"
+                required
+                class="w-full px-[15px] py-[13px] bg-bg text-text border border-border font-body text-[13px] outline-none rounded-[3px] focus:border-accent placeholder:text-muted/70 transition-colors"
+              />
+            </div>
+
+            <div class="mb-[22px]">
+              <label
+                for="subject"
+                class="block text-[13px] font-semibold mb-[9px]"
+              >
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What would you like to discuss?"
+                required
+                class="w-full px-[15px] py-[13px] bg-bg text-text border border-border font-body text-[13px] outline-none rounded-[3px] focus:border-accent placeholder:text-muted/70 transition-colors"
+              />
+            </div>
+
+            <div class="mb-[22px]">
+              <label
+                for="message"
+                class="block text-[13px] font-semibold mb-[9px]"
+              >
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message here..."
+                required
+                class="w-full px-[15px] py-[13px] bg-bg text-text border border-border font-body text-[13px] outline-none rounded-[3px] focus:border-accent placeholder:text-muted/70 resize-y min-h-[140px] transition-colors"
+              ></textarea>
+            </div>
+
+            <!-- Honeypot Spam Protection -->
+            <div
+              class="absolute -left-[9999px] w-px h-px overflow-hidden"
+              aria-hidden="true"
+            >
+              <label for="website">Leave this field empty</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="inline-block px-[22px] py-[12px] border border-accent bg-accent text-white text-[13px] font-semibold cursor-pointer transition-opacity hover:opacity-85 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              <span id="button-text">Send Message</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+
+            <p
+              id="form-status"
+              role="status"
+              aria-live="polite"
+              class="hidden mt-[18px] px-4 py-3 rounded-lg text-sm leading-[1.6]"
+            ></p>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <footer class="p-4 text-center text-sm text-gray-500 border-t border-gray-700 mt-8">
-        &copy; 2025 ABU SUFIAN TALUKDAR | Powered by SHERLOCK LAWYERS.
+    <!-- =================================
+         FOOTER
+    ================================= -->
+    <footer class="border-t border-border py-[25px]">
+      <div
+        class="w-[90%] max-w-[1120px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-muted text-xs text-center sm:text-left"
+      >
+        <p class="font-console">
+          © <span id="year"></span> Md. Abu Sufian Talukdar.
+        </p>
+        <p class="font-console">Built with curiosity and a passion for law.</p>
+      </div>
     </footer>
-    <script type="module">
-        const maximContent = document.getElementById('maxim-content');
-        const maximSourcesDiv = document.getElementById('maxim-sources');
-        const accentToggle = document.getElementById('accentToggle');
-        const root = document.documentElement;
-        const interestDetail = document.getElementById('interest-detail');
-        const interestCards = document.querySelectorAll('.interest-card');
 
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-        // --- 1. Dynamic Legal Maxim Feature (Gemini API) ---
-
-        // Exponential backoff helper
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-        /**
-         * Fetches a legal maxim using the Gemini API with Google Search grounding.
-         */
-        async function fetchLegalMaxim() {
-            const apiKey = ""; // API key is provided by the environment
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-            // Define the prompt and system instruction
-            const systemPrompt = "You are a friendly and knowledgeable AI assistant for a law student's personal website. Generate a single, concise, and interesting legal maxim or Latin phrase, and provide a short, modern interpretation of it. The maxim and the interpretation must be separated by a dash. Do not include any introductory or concluding text.";
-            const userQuery = "Generate a powerful and relevant Legal Maxim of the Day.";
-
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                tools: [{ "google_search": {} }], // Enable grounding for accuracy
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                },
-            };
-
-            const MAX_RETRIES = 5;
-            for (let i = 0; i < MAX_RETRIES; i++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.ok) {
-                        const result = await response.json();
-                        const candidate = result.candidates?.[0];
-
-                        if (candidate && candidate.content?.parts?.[0]?.text) {
-                            const text = candidate.content.parts[0].text.trim();
-                            const parts = text.split(/\s*-\s*/);
-                            const maxim = parts[0] || "No maxim found.";
-                            const interpretation = parts.slice(1).join(' - ') || "A concise legal principle.";
-
-                            // 1. Update text content
-                            maximContent.innerHTML = `
-                                <p class="text-2xl font-bold theme-accent-text text-shadow">${maxim}</p>
-                                <p class="mt-2 text-sm italic text-gray-300">${interpretation}</p>
-                            `;
-
-                            // 2. Extract and display sources
-                            const groundingMetadata = candidate.groundingMetadata;
-                            maximSourcesDiv.innerHTML = ''; // Clear previous sources
-                            if (groundingMetadata && groundingMetadata.groundingAttributions) {
-                                let sources = groundingMetadata.groundingAttributions
-                                    .map(attribution => ({
-                                        uri: attribution.web?.uri,
-                                        title: attribution.web?.title,
-                                    }))
-                                    .filter(source => source.uri && source.title);
-
-                                if (sources.length > 0) {
-                                    const uniqueSources = Array.from(new Set(sources.map(s => s.uri)))
-                                        .map(uri => sources.find(s => s.uri === uri));
-
-                                    maximSourcesDiv.innerHTML = '<p class="font-semibold text-gray-500 mb-1">Sources:</p>';
-                                    uniqueSources.forEach((source, index) => {
-                                        const link = document.createElement('a');
-                                        link.href = source.uri;
-                                        link.target = '_blank';
-                                        link.className = 'hover:underline block text-gray-500';
-                                        link.textContent = `${index + 1}. ${source.title}`;
-                                        maximSourcesDiv.appendChild(link);
-                                    });
-                                }
-                            }
-                            return; // Success, exit the function
-                        } else {
-                            throw new Error('API response content was empty.');
-                        }
-                    } else {
-                        throw new Error(`API returned status ${response.status}`);
-                    }
-                } catch (error) {
-                    console.error(`Attempt ${i + 1} failed:`, error.message);
-                    if (i < MAX_RETRIES - 1) {
-                        await sleep(Math.pow(2, i) * 1000); // Exponential backoff
-                    } else {
-                        // Final fallback message on failure
-                        maximContent.innerHTML = `
-                            <p class="text-2xl font-bold text-red-500">Error Loading Maxim</p>
-                            <p class="mt-2 text-sm italic text-gray-400">Please refresh. Defaulting to a classic: <span class="theme-accent-text">Ignorantia juris non excusat.</span></p>
-                        `;
-                    }
-                }
-            }
-        }
-
-
-        // --- 2. Secret Accent Toggle Feature ---
-
-        const ACCENT_COLORS = [
-            '251, 191, 36', // Amber (Default)
-            '239, 68, 68',  // Red
-            '34, 197, 94',  // Green
-            '99, 102, 241', // Indigo
-            '255, 99, 71'   // Tomato (A surprise!)
-        ];
-        let currentAccentIndex = 0;
-
-        accentToggle.addEventListener('click', () => {
-            // Cycle to the next color
-            currentAccentIndex = (currentAccentIndex + 1) % ACCENT_COLORS.length;
-            const newColor = ACCENT_COLORS[currentAccentIndex];
-
-            // Apply the new color to the root variables
-            root.style.setProperty('--color-accent', newColor);
-
-            // Optional: Show a temporary visual indicator/pulse
-            accentToggle.classList.add('scale-150');
-            setTimeout(() => {
-                accentToggle.classList.remove('scale-150');
-            }, 300);
-        });
-
-
-        // --- 3. Interactive Legal Focus Detail (Updated with wipe animation) ---
-
-        const interestData = {
-            "IP Law": "Data privacy and protection: Regulations concerning the collection, use, and protection of personal information in digital formats.",
-            "Con. Law": "A deep interest in the Amendment, particularly the balancing act between free speech principles and the regulation of deepfakes and misinformation in political discourse.",
-            "TP": "Transfer of property: Laws dictate how property is transferred from one person or entity to another. In Bangladesh, this is primarily governed by the Transfer of Property Act, 1882, which defines a living person as including corporations and associations. ",
-            "Pro Bono": "|||",
-        };
-
-        interestCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const interest = this.getAttribute('data-interest');
-
-                // Set content and trigger wipe animation
-                interestDetail.innerHTML = interestData[interest];
-                interestDetail.classList.remove('wipe-effect'); // Reset animation
-                void interestDetail.offsetWidth; // Trigger reflow for re-animation
-                interestDetail.classList.add('wipe-effect');
-            });
-            card.addEventListener('mouseleave', function() {
-                // Keep the last focused text
-            });
-        });
-
-
-        // Initialize on load
-        window.onload = function() {
-            fetchLegalMaxim();
-        };
-
-        // --- Firebase/Auth/Initialization Placeholder (Mandatory for real-world apps) ---
-        // We must initialize Firebase to conform to the required environment setup, even if not used for data.
-
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // Global variables provided by the environment
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-        let app, db, auth;
-
-        // Function to initialize Firebase and authenticate
-        async function initializeFirebase() {
-            if (!firebaseConfig) {
-                console.error("Firebase configuration is missing.");
-                return;
-            }
-
-            try {
-                app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-
-                // Authenticate the user
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-
-                onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        console.log("Firebase initialized. User ID:", user.uid);
-                    } else {
-                        console.log("Firebase initialized. User is anonymous.");
-                    }
-                });
-            } catch (error) {
-                console.error("Error initializing Firebase:", error);
-            }
-        }
-
-        initializeFirebase();
-
-    </script>
-</body>
+    <!-- External JS -->
+    <script src="./Scripts/script.js"></script>
+  </body>
 </html>
